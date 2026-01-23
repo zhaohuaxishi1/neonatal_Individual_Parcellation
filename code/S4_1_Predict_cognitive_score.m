@@ -22,7 +22,7 @@ perm_flag = 0;
 
 % Paths
 data_dir = 'data';
-atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_cog.mat');
+atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_cog_prediction.mat');
 score_file = fullfile(data_dir, 'PredictionCognitionScore.mat');
 
 result_dir = fullfile('output', 'prediction', 'SVR_10CV_TiPCA_Cognitive');
@@ -58,4 +58,5 @@ if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 W_Calculate_SVR(SubjectsData, Cognition, pre_method, c_para, weight_dir);
 
 toc;
+
 
