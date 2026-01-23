@@ -22,8 +22,8 @@ perm_flag = 0;
 
 % Paths
 data_dir = 'data';
-atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_cog_regressed.mat');
-score_file = fullfile(data_dir, 'PredictionMotorScore_Regressed.mat');
+atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_cog_prediction.mat');
+score_file = fullfile(data_dir, 'PredictionMotorScore.mat');
 
 result_dir = fullfile('output', 'prediction', 'SVR_10CV_TiPCA_Motor');
 if ~exist(result_dir, 'dir'); mkdir(result_dir); end
@@ -59,3 +59,4 @@ if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 W_Calculate_SVR(SubjectsData, Motor, pre_method, c_para, weight_dir);
 
 toc;
+
