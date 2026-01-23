@@ -22,7 +22,7 @@ perm_flag = 0;  % 0 for normal run, 1 for permutation test
 
 %% --------------------------- Load Data ---------------------------
 data_dir = 'data';
-atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_age_regressed.mat');
+atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_age_prediction.mat');
 age_file   = fullfile(data_dir, 'PredictionAgeScore.mat');
 
 load(atlas_file);         % V_vector_age
@@ -58,4 +58,5 @@ weight_dir = fullfile(result_dir, 'weights');
 if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 
 W_Calculate_SVR(SubjectsData, Age, pre_method, c_para, weight_dir);
+
 
