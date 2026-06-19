@@ -118,17 +118,6 @@ All analyses were conducted using open-source software and publicly available to
 - ggplot2: https://ggplot2.tidyverse.org/
 - GIFTI and MATLAB (R2020b)
 
-## 🧠 Output Examples
-
-| **Analysis**                        | **Output Folder**                                            |
-| ----------------------------------- | ------------------------------------------------------------ |
-| Group-level soft atlas              | `output/fig_grp_soft/`                                       |
-| Individual variability & boundaries | `output/individual_variability/`, `output/variability_loading_corr/` |
-| Brain age prediction                | `output/gam_totalloading/`, `output/gam_voxelwise/`          |
-| Cognitive prediction                | `output/SVR_10CV_TiPCA_Cognitive/`                           |
-| Structural maturation               | `output/gam_structurematuration/`                            |
-| Classification ROC                  | `output/classification/SVM_10CV_TiPCA/`                      |
-
 ## System Requirements
 
 #### Linux Server Cluster
@@ -149,3 +138,15 @@ All analyses were conducted using open-source software and publicly available to
 #### Runtime
 
 The complete pipeline was executed on the Linux server cluster described above. The total runtime for processing the full dataset was approximately **15 days**. Actual runtime may vary depending on hardware configuration, available computational resources, and workload scheduling.
+
+## 🧠 Output Examples
+
+| **Analysis**                        | **Output Folder**                                            |
+| ----------------------------------- | ------------------------------------------------------------ |
+| Group-level soft atlas              | `output/fig_grp_soft/`                                       |
+| Individual variability & boundaries | `output/individual_variability/`, `output/variability_loading_corr/` |
+| Brain age prediction                | `output/gam_totalloading/`, `output/gam_voxelwise/`          |
+| Cognitive prediction                | `output/SVR_10CV_TiPCA_Cognitive/`                           |
+| Structural maturation               | `output/gam_structurematuration/`                            |
+| Classification ROC                  | `output/classification/SVM_10CV_TiPCA/`                      |
+
