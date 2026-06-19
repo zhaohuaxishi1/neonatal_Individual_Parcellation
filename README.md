@@ -137,7 +137,7 @@ All analyses were conducted using open-source software and publicly available to
 
 #### Runtime
 
-The complete analysis pipeline was run on a 24-node Linux computing cluster and required approximately 15 days to complete all major experiments and generate the primary results reported in the manuscript..
+The complete analysis pipeline was run on a 24-node Linux computing cluster and required approximately 15 days to complete all major experiments and generate the primary results reported in the manuscript.
 
 ## 🧠 Output Examples
 
