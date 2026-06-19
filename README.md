@@ -137,7 +137,7 @@ All analyses were conducted using open-source software and publicly available to
 
 #### Runtime
 
-The complete pipeline was executed on the Linux server cluster described above. The total runtime for processing the full dataset was approximately **15 days**. Actual runtime may vary depending on hardware configuration, available computational resources, and workload scheduling.
+The complete analysis pipeline was run on a 24-node Linux computing cluster and required approximately 15 days to complete all major experiments and generate the primary results reported in the manuscript..
 
 ## 🧠 Output Examples
 
