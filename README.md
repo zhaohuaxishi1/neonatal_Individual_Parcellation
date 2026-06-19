@@ -129,4 +129,23 @@ All analyses were conducted using open-source software and publicly available to
 | Structural maturation               | `output/gam_structurematuration/`                            |
 | Classification ROC                  | `output/classification/SVM_10CV_TiPCA/`                      |
 
-## 
+## System Requirements
+
+#### Linux Server Cluster
+
+- Ubuntu 22.04 LTS
+- Intel® Xeon® CPU E5-2683 v4 @ 2.10 GHz
+- 128 GB RAM
+- 32 CPU cores
+- 24 compute nodes
+
+####  Windows Workstation
+
+- Microsoft Windows 10 Enterprise (64-bit)
+- Intel® Core™ i7-9700 CPU
+- 24 GB RAM
+- 8 CPU cores
+
+#### Runtime
+
+The complete pipeline was executed on the Linux server cluster described above. The total runtime for processing the full dataset was approximately **15 days**. Actual runtime may vary depending on hardware configuration, available computational resources, and workload scheduling.
