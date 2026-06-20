@@ -27,11 +27,7 @@ Source data supporting the findings are provided with this paper.
 
 ### Data
 
-Due to file size limitations, the full processed data used in this study are provided via an external repository.
-All datasets required to reproduce the main analyses can be downloaded from the following link:
-
-**Baidu Netdisk:** https://pan.baidu.com/s/16VKIa-LluwZbbaeidjU3Jg?pwd=5en6 
-
+All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_Individual_Parcellation/releases/tag/v1.0.0).
 
 
 - `group_icn_soft`, `group_icn_hard/`: Group-level soft and hard functional topographies
