@@ -25,7 +25,7 @@ data_dir = 'data';
 atlas_file = fullfile(data_dir, 'network_loading', 'V_vector_qchat_prediction.mat');
 score_file = fullfile(data_dir, 'PredictionQchatScore.mat');
 
-result_dir = fullfile('output', 'prediction', 'SVR_10CV_TiPCA_Motor');
+result_dir = fullfile('output', 'prediction', 'SVR_10CV_TiPCA_Qchat');
 if ~exist(result_dir, 'dir'); mkdir(result_dir); end
 
 %% --------------------------- Load Data ---------------------------
