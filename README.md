@@ -36,7 +36,7 @@ All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_In
 - `network_loading/`: Feature of Age & behavioral outcome scores at 18 months
 - `structure_basis/`: Structural features & metrics (`sub_metric_all_term.mat`)
 - `classification/`: Matched term-preterm data and labels (`V_vector_FDAll.mat`, `ClassificationlabelFDAll.mat`)
-- `*.mat` (e.g., `PredictionAgeScore_Regressed.mat`): Age & behavioral outcome scores at 18 months
+- `*.mat` (e.g., `PredictionAgeScore.mat`): Age & behavioral outcome scores at 18 months
 - `init.mat`:  soft functional topographies (Voxel, Network number)
 - `Resliced3mm_GmMask_final.nii`: Final gray matter mask
 
