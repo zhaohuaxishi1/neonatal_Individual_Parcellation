@@ -55,4 +55,10 @@ perm_flag = 0;  % 0: normal run; 1: permutation test
 save(fullfile(result_dir, 'Performance.mat'), 'accuracy', 'sensitivity', 'specificity');
 
 %% ------------------------ Feature Contribution ------------------------
-W_Calculate_SVM(SubjectsData, SubjectsLabel, pre_method, result_dir);
+for i =1:100
+   result_dir_weight  = [result_dir,'\Weight\' 'Time' num2str(i)];
+   if ~exist(result_dir_weight, 'dir')
+    mkdir(result_dir_weight);
+   end
+   W_Calculate_SVM_Random(SubjectsData,SubjectsLabel,fold_quantity, pre_method,result_dir_weight);
+end
