@@ -25,29 +25,9 @@ end
 % Split into N folds randomly
 EachPart_Quantity = fix(Subjects_Quantity / FoldQuantity);
 
-%% Example:
-ResPath = '...';
-
-load(fullfile(ResPath,'Prediction.mat'));
-load(fullfile(ResPath,'idx.mat'));
-
-Subjects_Scores_del = Subjects_Scores(idx);
-
-[~,SortedID_del] = sort(Subjects_Scores_del);
-
-idx_rank = idx(SortedID_del)';
-
-Origin_ID_top = Prediction.Origin_ID_top;
-Origin_ID = Prediction.Origin_ID;
-
-clear Prediction
-
-specialFold = [7 10];
-
-for f = 1:2
-    Origin_ID_top{specialFold(f)} = ...
-        [Origin_ID_top{specialFold(f)};
-        idx_rank(f:2)];
+[~, SortedID] = sort(Subjects_Scores);
+for j = 1:FoldQuantity
+    Origin_ID{j} = SortedID([j : FoldQuantity : Subjects_Quantity]);
 end
 
 %% ========================= Cross Validation ===========================
@@ -55,33 +35,18 @@ for j = 1:FoldQuantity
     
     disp(['The ' num2str(j) ' fold!']);
     
-    if  ~ismember(j,index)
-        mask = true(size(Subjects_Data,1),1);
-        mask(idx) = false;
-        Training_data = Subjects_Data(mask,:);
-        Training_scores = Subjects_Scores(mask,:);
-        
-        test_data = Training_data(Origin_ID{j}, :);
-        test_score = Training_scores(Origin_ID{j});
-        Training_data(Origin_ID{j}, :) = [];
-        Training_scores(Origin_ID{j}) = [];
-        Training_cov_new = cov_new(mask,:);
-        test_cov_new = Training_cov_new(Origin_ID{j},:);
-        Training_cov_new(Origin_ID{j},:) = [];
-        
-    else
-        Training_data = Subjects_Data;
-        Training_scores = Subjects_Scores;
-        % Select training data and testing data
-        test_data = Training_data(Origin_ID_top{j}, :);
-        test_score = Training_scores(Origin_ID_top{j});
-        Training_data(Origin_ID_top{j}, :) = [];
-        Training_scores(Origin_ID_top{j}) = [];
-        
-        Training_cov_new = cov_new;
-        Training_cov_new(Origin_ID_top{j},:) = [];
-        test_cov_new = cov_new(Origin_ID_top{j},:);
-    end
+     Training_data = Subjects_Data;
+    Training_scores = Subjects_Scores;
+    
+    % Select training data and testing data
+    test_data = Training_data(Origin_ID{j}, :);
+    test_score = Training_scores(Origin_ID{j});
+    Training_data(Origin_ID{j}, :) = [];
+    Training_scores(Origin_ID{j}) = [];
+    
+    Training_cov_new = cov_new;
+    Training_cov_new(Origin_ID{j},:) = [];
+    test_cov_new = cov_new(Origin_ID{j},:);
     
     % demean
     covariates_mean = mean(Training_cov_new,1);
@@ -153,8 +118,7 @@ for j = 1:FoldQuantity
     end
     
     test_data  = test_data_New;
-    %%
-    
+    %% PCA Dimension Reduction
     NetfeaPCA = Subjects_Quantity - EachPart_Quantity - 2;
     if mod(Subjects_Quantity, FoldQuantity) == 0
         NetfeaPCA = Subjects_Quantity - EachPart_Quantity - 1;
