@@ -70,7 +70,7 @@ All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_In
 
 #### 4. **Neurodevelopmental Outcome Prediction**
 
-- **18-month outcomes** (cognitive, language, motor，Q-chat) predicted using functional topographil features
+- **18-month outcomes** (cognitive, language, motor, Q-chat) predicted using functional topographil features
 
 #### 5. **Structural Basis of Functional Development**
 
