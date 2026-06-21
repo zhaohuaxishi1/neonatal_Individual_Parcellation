@@ -47,9 +47,9 @@ All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_In
 | S1         | Generate group and individual functional topographies      | `s1_1_Group_level_probabilistic_network_topographies.m`, `s1_2_Hard_parcellation.m` |
 | S2         | Analyze individual variability and boundary concentraction | `s2_1_Voxel_wise_individual_variability.m`, `s2_2_Network_level_individual_variability.m`, `s2_3_1_Boundary_concentration.m`, `s2_3_2_Plot_Boundary_concentration.R` |
 | S3         | Predict brain age using topographic features               | `S3_1_AgeEffect_totalLoading.R`, `S3_2_AgeEffect_voxelwise_networks.R`, `S3_3_Predict_brain_age.m` |
-| S4         | Predict cognitive, language, and motor outcomes            | `S4_1_Predict_cognitive_score.m`, `S4_2_Predict_language_score.m`, `S4_3_Predict_motor_score.m` |
-| S5         | Structural basis of functional development                 | `S5_1_GAM_structural_maturation.R`, `S5_2_Visualize_structural_age_effects.m` |
-| S6         | Classify preterm vs term infants & visualize ROC           | `S6_1_Classify_preterm_vs_term.m`, `S6_2_Visualize_classification_ROC.m` |
+| S4         | Predict cognitive, language, and motor outcomes            | `S4_1_Predict_cognitive_score.m`, `S4_2_Predict_language_score.m`, `S4_3_Predict_motor_score.m` , `S4_4_Predict_qchat_score.m` |
+| S5         | Structural basis of functional development                 | `S5_1_GAM_structural_maturation.R`, `S5_2_Visualize_structural_age_effects.m`, `S5_3_Struc_Func_Coupling.m` , `S5_4_network_level_PLS_All.m`|
+| S6         | Classify preterm vs term infants & visualize ROC           | `S6_1_Classify_preterm_vs_term.m`, `S6_2_Visualize_classification_ROC.m`, `S6_3_Visualize_preterm_BAG_violin.m` |
 
 ### Key Analyses & Workflow
 
@@ -70,18 +70,17 @@ All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_In
 
 #### 4. **Neurodevelopmental Outcome Prediction**
 
-- **18-month outcomes** (cognitive, language, motor) predicted using functional topographil features
+- **18-month outcomes** (cognitive, language, motor，Q-chat) predicted using functional topographil features
 
 #### 5. **Structural Basis of Functional Development**
 
 - Cortical metrics (myelination, sulcal depth, curvature, thickness) modeled with GAM
 - Significant maturational regions visualized via GIFTI surfaces
-
+- partial least-square (PLS) analyses to assess the latent relationship between these maturation maps (F values of the age effect) and the contribution weights of network-specific functional topography.
 #### 6. **Preterm Functional Alterations**
-
 - **Classification (term vs preterm)** using SVM with Ti-PCA features
 - ROC curves and decision values are visualized to assess model performance
-
+- Personalized brain age gap (BAG) analysis
 # Software & Tools
 
 All analyses were conducted using open-source software and publicly available toolboxes.
