@@ -51,12 +51,13 @@ PreScore  = vertcat(Prediction.Score{:});
 save(fullfile(result_dir, 'Correlation.mat'), 'r_value', 'p_value');
 
 fprintf('[Motor Prediction] r = %.3f, p = %.3g\n', r_value, p_value);
-
+toc;
 %% --------------------------- Compute Feature Weights ---------------------------
 weight_dir = fullfile(result_dir, 'weights');
 if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 
-W_Calculate_SVR(SubjectsData, Motor, pre_method, c_para, weight_dir);
+for i = 1: 100
+    W_Calculate_SVR_Random(i, SubjectsData, Motor, fold_quantity, pre_method, c_para, n_networks, n_voxels_per_net, network_order, weight_dir);
+end
 
-toc;
 

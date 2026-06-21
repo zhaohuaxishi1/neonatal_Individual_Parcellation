@@ -52,12 +52,12 @@ MAE = mean(abs(TrueScore - PreScore));
 save(fullfile(result_dir, 'Correlation.mat'), 'r_value', 'p_value');
 
 fprintf('[Language Prediction] r = %.3f, p = %.3g\n', r_value, p_value);
-
+toc;
 %% --------------------------- Compute Feature Weights ---------------------------
 weight_dir = fullfile(result_dir, 'weights');
 if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 
-W_Calculate_SVR(SubjectsData, Language, pre_method, c_para, weight_dir);
-
-toc;
+for i = 1: 100
+    W_Calculate_SVR_Random(i, SubjectsData, Language, fold_quantity, pre_method, c_para, n_networks, n_voxels_per_net, network_order, weight_dir);
+end
 

@@ -57,6 +57,6 @@ toc;
 weight_dir = fullfile(result_dir, 'weights');
 if ~exist(weight_dir, 'dir'); mkdir(weight_dir); end
 
-W_Calculate_SVR(SubjectsData, Age, pre_method, c_para, weight_dir);
-
-
+for i = 1: 100
+    W_Calculate_SVR_Random(i, SubjectsData, Age, fold_quantity, pre_method, c_para, n_networks, n_voxels_per_net, network_order, weight_dir);
+end
