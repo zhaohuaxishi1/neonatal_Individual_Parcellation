@@ -1,8 +1,8 @@
-# **Personalized functional topography in neonatal brain networks**
+# **Precision probabilistic mapping reveals personalized functional topography in the early postnatal human brain**
 
-E-mail: [zhaojianlong@mail.bnu.edu.cn](mailto:zhaojianlong@mail.bnu.edu.cn)
+E-mail: [zhaojianlong@mail.bnu.edu.cn](mailto:zhaojianlong@mail.bnu.edu.cn); [tengdazhao@bnu.edu.cn](mailto:tengdazhao@bnu.edu.cn)
 
-This repository provides code and source data that support the findings of the article entitled "Personalized functional topography in neonatal brain networks“ 
+This repository provides code and source data that support the findings of the article entitled "Precision probabilistic mapping reveals personalized functional topography in the early postnatal human brain“ 
 
 ## Overview
 
@@ -70,7 +70,7 @@ All data are available in Releases (https://github.com/zhaohuaxishi1/neonatal_In
 
 #### 4. **Neurodevelopmental Outcome Prediction**
 
-- **18-month outcomes** (cognitive, language, motor, Q-chat) predicted using functional topographil features
+- **18-month outcomes** (cognitive, language, motor, Q-chat) predicted using functional topographical features
 
 #### 5. **Structural Basis of Functional Development**
 
